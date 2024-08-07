@@ -1,0 +1,57 @@
+@using RazorViews.Models;
+@{
+    string title = "Index";
+    Person person = new Person("Vaish", 29);
+    List<string> countries = new List<string>() {"India", "Spain", "Canada"};
+}
+
+@{
+    string GetName(int id){
+        if(id==10)
+            return person.Name;
+        return "no name";
+    }
+    var name = GetName(15);
+}
+
+@functions{
+    string GetPersonName(int id){
+        if(id==10)
+            return "Siva";
+        return "no name";
+    }
+}
+
+@{
+    var runJs = "<script>alert('test');</script>";
+    var runencodedJs = "&lt;script&gt;alert('test');&lt;/script&gt;";
+}
+@* <h2>@Html.Raw(runJs)</h2> *@
+<h2>@runJs</h2>
+<h2>@Html.Raw(runencodedJs)</h2>
+
+<h1>@title</h1>
+@foreach(var country in countries){
+    <text>Hello</text>
+    @:to
+    <p>The beautiful </p>
+    <h3>@country</h3>
+}
+@for(int i=0;i<2;i++){
+    <h4>@countries[i]</h4>
+}
+<div>
+    <h1>Welcome to Home from Index</h1>
+</div>
+
+@if(ViewData["newPerson"] is not null){
+    <h2>New Person</h2>
+    Person newPerson = (Person)ViewData["newPerson"];
+    <p>@newPerson.Name is @newPerson.Age years old</p>
+}
+
+@if(ViewBag.NewPerson is not null){
+    <h2>New Person</h2>
+    Person newPerson = ViewBag.NewPerson;
+    <p>@newPerson.Name is @newPerson.Age years old</p>
+}
