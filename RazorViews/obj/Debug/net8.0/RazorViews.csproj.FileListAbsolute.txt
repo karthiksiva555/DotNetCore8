@@ -25,3 +25,5 @@
 /Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/obj/Debug/net8.0/RazorViews.pdb
 /Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/obj/Debug/net8.0/RazorViews.genruntimeconfig.cache
 /Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/obj/Debug/net8.0/ref/RazorViews.dll
+/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/obj/Debug/net8.0/RazorViews.sourcelink.json
+/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/bin/Debug/net8.0/RazorViews.staticwebassets.runtime.json

@@ -3,6 +3,7 @@ using RazorViews.Models;
 
 namespace RazorViews.Controllers;
 
+[Route("[controller]")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -11,14 +12,16 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-    
-    [HttpGet]
+
+    [HttpGet("")]
+    [Route("/")]
     public IActionResult Index()
     {
         ViewBag.NewPerson = new Person("Ram", 25);
         return View();
     }
 
+    [HttpGet("error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

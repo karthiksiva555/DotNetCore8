@@ -34,6 +34,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uL0dldFBlcnNvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/Views/Shared/GlobalView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0dsb2JhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/Views/Weather/GetAllCities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2VhdGhlci9HZXRBbGxDaXRpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/Views/Weather/GetCityWeather.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2VhdGhlci9HZXRDaXR5V2VhdGhlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

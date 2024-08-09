@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "R3KHB0Tdjil2iFIXZqs2+0I0yzJdOPiSABMvCiWqqu0=",
+  "Hash": "mWvWrNdpLn6uSKeb4xiI9FUVPiMTsGe0b7oUpv38Twg=",
   "Source": "RazorViews",
   "BasePath": "_content/RazorViews",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "RazorViews/wwwroot",
+      "Source": "RazorViews",
+      "ContentRoot": "/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/wwwroot/",
+      "BasePath": "_content/RazorViews",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/wwwroot/StyleSheet.css",
+      "SourceId": "RazorViews",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/karthiksmac/practice/dotnet/DotNetCore8/RazorViews/wwwroot/",
+      "BasePath": "_content/RazorViews",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/StyleSheet.css"
+    }
+  ]
 }

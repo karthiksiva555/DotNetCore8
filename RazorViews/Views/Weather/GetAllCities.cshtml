@@ -1,0 +1,14 @@
+@using RazorViews.Models;
+
+@model IEnumerable<CityWeather>;
+
+@foreach(var city in Model)
+{
+    <div class="box float-left flex container green-back">
+        <h2>@city.CityName</h2>
+        <h4>@city.Temparature degrees</h4>
+        <h4>Last Updated at @city.DateAndTime</h4>
+
+        <a href="weather/bycity/@city.CityCode" class="link">Details</a>
+    </div>
+}
