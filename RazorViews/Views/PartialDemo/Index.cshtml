@@ -1,0 +1,13 @@
+<h1>Index</h1>
+
+@* Sends result to parent view; return type IHtmlElement *@
+<partial name="_CityList"></partial>
+
+@* Same as <partial> tag helper; return result to parent *@
+@await Html.PartialAsync("_CityList")
+
+@* Returns the result directly to the browser;
+Gives better performance *@
+@{
+    await Html.RenderPartialAsync("_CityList");
+}
