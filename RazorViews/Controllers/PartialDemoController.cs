@@ -21,6 +21,7 @@ namespace RazorViews.Controllers
         [HttpGet("")]
         public IActionResult Index()
         {
+            ViewData["Title"] = "Title From Controller";
             return View();
         }
 

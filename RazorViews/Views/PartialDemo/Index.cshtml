@@ -1,13 +1,11 @@
 <h1>Index</h1>
-
-@* Sends result to parent view; return type IHtmlElement *@
-<partial name="_CityList"></partial>
-
-@* Same as <partial> tag helper; return result to parent *@
-@await Html.PartialAsync("_CityList")
-
-@* Returns the result directly to the browser;
-Gives better performance *@
+<h2>@ViewBag.Title</h2>
 @{
-    await Html.RenderPartialAsync("_CityList");
+    var customViewData = new ViewDataDictionary(ViewData);
+    customViewData["Title"] = "Custom View Data Title";
 }
+@* <partial name="_CityList" view-data = "customViewData"></partial> *@
+@{
+    await Html.RenderPartialAsync("_CityList", customViewData);
+}
+<h2>Title After Partial View: @ViewBag.Title</h2>

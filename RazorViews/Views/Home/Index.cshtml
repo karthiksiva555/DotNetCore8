@@ -8,7 +8,7 @@
 @{
     string GetName(int id){
         if(id==10)
-            return person.Name;
+            return person.Name ?? string.Empty;
         return "no name";
     }
     var name = GetName(15);
@@ -46,7 +46,7 @@
 
 @if(ViewData["newPerson"] is not null){
     <h2>New Person</h2>
-    Person newPerson = (Person)ViewData["newPerson"];
+    Person newPerson = (Person)ViewData["newPerson"]!;
     <p>@newPerson.Name is @newPerson.Age years old</p>
 }
 

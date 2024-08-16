@@ -1,3 +1,6 @@
 <h2>About</h2>
-
-<p>Partial view is not called here.</p>
+@{
+    List<string> courses = ["C#", "Python", "Go"];
+    ListModel list = new("Courses", courses);
+}
+<partial name="_List" model="list"></partial>
