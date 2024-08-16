@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using RazorViews.Models;
 
 namespace RazorViews.Controllers
 {
@@ -31,6 +26,10 @@ namespace RazorViews.Controllers
             return View();
         }
 
-        
+        [HttpGet("dynamic-load")]
+        public IActionResult DynamicLoad()
+        {
+            return View();
+        }
     }
 }

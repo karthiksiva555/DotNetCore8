@@ -1,0 +1,18 @@
+<h2>Dynamic Load</h2>
+
+<button id="load-cars" type="button">Load Cars</button>
+
+<button id="load-trucks" type="button">Load trucks</button>
+
+<div class="box list-content"></div>
+
+<script>
+    document.querySelector("#load-cars").addEventListener("click", async function () {
+        const response = await fetch("/vehicle/cars");
+        document.querySelector(".list-content").innerHTML = await response.text();
+    });
+    document.querySelector("#load-trucks").addEventListener("click", async function () {
+        const response = await fetch("/vehicle/trucks");
+        document.querySelector(".list-content").innerHTML = await response.text();
+    });
+</script>
