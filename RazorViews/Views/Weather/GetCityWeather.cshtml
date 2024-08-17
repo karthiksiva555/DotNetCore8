@@ -1,11 +1,8 @@
-@using RazorViews.Models;
-
 @model CityWeather;
 
-<div class="box">
-    <h2>@Model.CityName</h2>
-    <h4>@Model.Temparature degrees</h4>
-    <h4>Last Updated at @Model.DateAndTime</h4>
+@{
+    var city = Model;
+}
+<partial name="_CityDetail" model="city"/>
 
-    <a href="/weather" class="link">Back to All Cities</a>
-</div>
+

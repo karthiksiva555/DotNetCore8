@@ -1,14 +1,28 @@
-@using RazorViews.Models;
-
 @model IEnumerable<CityWeather>;
 
 @foreach(var city in Model)
 {
     <div class="box float-left flex container green-back">
         <h2>@city.CityName</h2>
-        <h4>@city.Temparature degrees</h4>
-        <h4>Last Updated at @city.DateAndTime</h4>
-
-        <a href="weather/bycity/@city.CityCode" class="link">Details</a>
+        @* <a href="weather/bycity/@city.CityCode" class="link">Details</a> *@
+        <a href="#" class="details-link" data-id="@city.CityCode">Load City</a>
     </div>
 }
+
+<div id="city-detail" class="box"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('.details-link');
+
+        links.forEach(function(link) {
+            link.addEventListener('click', async function(event) {
+                event.preventDefault();
+
+                const cityCode = link.getAttribute('data-id');
+                const response = await fetch("weather/city/"+cityCode);
+                document.querySelector("#city-detail").innerHTML = await response.text();
+            });
+        });
+    });
+</script>

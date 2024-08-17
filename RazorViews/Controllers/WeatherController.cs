@@ -22,12 +22,20 @@ public class WeatherController : Controller
     [HttpGet("bycity/{cityCode?}")]
     public IActionResult GetCityByCode(string cityCode)
     {
-        var cityWeather = string.IsNullOrEmpty(cityCode) ? null : cityWeatherReport.FirstOrDefault(c => c.CityCode == cityCode);
+        var cityWeather = string.IsNullOrEmpty(cityCode) ? null : cityWeatherReport.FirstOrDefault(c => string.Equals(c.CityCode, cityCode, StringComparison.CurrentCultureIgnoreCase));
         if(cityWeather == null)
         {
             return View("Error");
         }
 
         return View("GetCityWeather", cityWeather);
+    }
+    
+    [HttpGet("city/{cityCode?}")]
+    public IActionResult CityByCode(string cityCode)
+    {
+        var cityWeather = string.IsNullOrEmpty(cityCode) ? null : cityWeatherReport.FirstOrDefault(c => c.CityCode == cityCode);
+
+        return PartialView("_CityDetail", cityWeather);
     }
 }
