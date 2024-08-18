@@ -12,9 +12,9 @@ public class TopArticlesViewComponent : ViewComponent
         _articlesService = articlesService;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync()
+    public async Task<IViewComponentResult> InvokeAsync(int count)
     {
-        var topArticles = await _articlesService.GetTopArticles();
+        var topArticles = await _articlesService.GetTopArticles(count);
         return View(topArticles);
     }
 }

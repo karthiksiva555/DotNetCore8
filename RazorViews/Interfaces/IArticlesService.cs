@@ -8,5 +8,5 @@ namespace RazorViews.Interfaces;
 
 public interface IArticlesService
 {
-    Task<List<Article>> GetTopArticles();
+    Task<List<Article>> GetTopArticles(int count);
 }

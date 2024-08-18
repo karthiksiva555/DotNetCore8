@@ -1,3 +1,16 @@
 <h2>Articles View</h2>
 
-@await Component.InvokeAsync("TopArticles")
+@await Component.InvokeAsync("TopArticles", new { count = 2})
+
+<vc:top-articles count=1></vc:top-articles>
+
+<button id="load-articles" type="button" class="button button-blue-back">Load Articles</button>
+
+<div id="articles-list" class="box"></div>
+
+<script>
+    document.querySelector("#load-articles").addEventListener("click", async function(){
+        const response = await fetch('articles/load-articles');
+        document.querySelector('#articles-list').innerHTML = await response.text();
+    });
+</script>

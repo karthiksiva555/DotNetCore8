@@ -64,3 +64,4 @@ TestResults/
 publish/
 
 RazorViews/bin/
+**/.DS_Store

@@ -14,8 +14,8 @@ public class ArticlesService : IArticlesService
         new Article("Local Elections", "Who is strong in upcoming local elections"),
         new Article("Latest Tech News", "All the trends and updates in tech industry")
     ];
-    public async Task<List<Article>> GetTopArticles()
+    public async Task<List<Article>> GetTopArticles(int count)
     {
-        return await Task.FromResult(_articles);
+        return await Task.FromResult(_articles.Take(count).ToList());
     }
 }
