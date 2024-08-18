@@ -15,7 +15,6 @@ public class TopArticlesViewComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var topArticles = await _articlesService.GetTopArticles();
-        ViewData["Articles"] = topArticles;
-        return View();
+        return View(topArticles);
     }
 }

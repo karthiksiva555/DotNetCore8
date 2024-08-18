@@ -1,8 +1,8 @@
-@using RazorViews.Models;
+@model IEnumerable<Article>;
 
 <h2>Top Articles</h2>
 
-@foreach(Article article in ViewBag.Articles)
+@foreach(Article article in Model)
 {
     <h4>@article.Name</h4>
     <p>@article.Description</p>
