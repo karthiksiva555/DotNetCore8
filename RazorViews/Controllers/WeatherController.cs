@@ -1,28 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
-using RazorViews.Models;
+using RazorViews.Interfaces;
 
 namespace RazorViews.Controllers;
 
 [Route("[controller]")]
 public class WeatherController : Controller
 {
-    readonly List<CityWeather> cityWeatherReport = [
-        new("NYC", "New York", DateTime.Now.AddMinutes(-1), 25),
-        new("LDN", "London", DateTime.Now.AddMinutes(-2), 40),
-        new("PAR", "Paris", DateTime.Now.AddSeconds(-30), 15),
-        new("TRT", "Toronto", DateTime.Now.AddSeconds(-45), -15)
-    ];
-
-    [HttpGet("")]
-    public IActionResult GetAllCities()
+    private readonly IWeatherService _weatherService;
+    public WeatherController(IWeatherService weatherService)
     {
-        return View(cityWeatherReport);
+        _weatherService = weatherService;
+    }
+    [HttpGet("")]
+    public async Task<IActionResult> GetAllCitiesAsync()
+    {
+        var cities = await _weatherService.GetCityWeatherListAsync();
+        return View(cities);
     }
 
     [HttpGet("bycity/{cityCode?}")]
-    public IActionResult GetCityByCode(string cityCode)
+    public async Task<IActionResult> GetCityByCodeAsync(string cityCode)
     {
-        var cityWeather = string.IsNullOrEmpty(cityCode) ? null : cityWeatherReport.FirstOrDefault(c => string.Equals(c.CityCode, cityCode, StringComparison.CurrentCultureIgnoreCase));
+        var cityWeather = await _weatherService.GetWeatherByCityCodeAsync(cityCode);
         if(cityWeather == null)
         {
             return View("Error");
@@ -32,10 +31,17 @@ public class WeatherController : Controller
     }
     
     [HttpGet("city/{cityCode?}")]
-    public IActionResult CityByCode(string cityCode)
+    public async Task<IActionResult> CityByCode(string cityCode)
     {
-        var cityWeather = string.IsNullOrEmpty(cityCode) ? null : cityWeatherReport.FirstOrDefault(c => c.CityCode == cityCode);
+        var cityWeather = await _weatherService.GetWeatherByCityCodeAsync(cityCode);
 
         return PartialView("_CityDetail", cityWeather);
+    }
+
+    [HttpGet("city-list")]
+    public async Task<IActionResult> GetCityListAsync()
+    {
+        var allCities = await _weatherService.GetCityWeatherListAsync();
+        return View("GetCityList", allCities);
     }
 }
