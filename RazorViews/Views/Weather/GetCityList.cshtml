@@ -3,5 +3,5 @@
 <h2>City List Using View Component</h2>
 @foreach(CityWeather cityWeather in Model)
 {
-    @await Component.InvokeAsync("CityWeather", new {cityCode = cityWeather.CityCode});
+    <vc:city-weather city-code="@cityWeather.CityCode"/>
 }

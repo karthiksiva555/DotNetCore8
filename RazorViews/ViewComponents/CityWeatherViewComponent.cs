@@ -3,14 +3,9 @@ using RazorViews.Interfaces;
 
 namespace RazorViews.ViewComponents;
 
-public class CityWeatherViewComponent : ViewComponent
+public class CityWeatherViewComponent(IWeatherService weatherService) : ViewComponent
 {
-    private readonly IWeatherService _weatherService;
-
-    public CityWeatherViewComponent(IWeatherService weatherService)
-    {
-        _weatherService = weatherService;
-    }
+    private readonly IWeatherService _weatherService = weatherService;
 
     public async Task<IViewComponentResult> InvokeAsync(string cityCode)
     {
