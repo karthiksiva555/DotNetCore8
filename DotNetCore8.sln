@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore8", "DotNetCore8\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorViews", "RazorViews\RazorViews.csproj", "{D5FBDED4-04A4-489C-9B59-8E0ACD90D835}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationExample", "ConfigurationExample\ConfigurationExample.csproj", "{647C37DF-ED82-41DB-9B39-7B7BDFCF34E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{D5FBDED4-04A4-489C-9B59-8E0ACD90D835}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5FBDED4-04A4-489C-9B59-8E0ACD90D835}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5FBDED4-04A4-489C-9B59-8E0ACD90D835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647C37DF-ED82-41DB-9B39-7B7BDFCF34E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647C37DF-ED82-41DB-9B39-7B7BDFCF34E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647C37DF-ED82-41DB-9B39-7B7BDFCF34E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647C37DF-ED82-41DB-9B39-7B7BDFCF34E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
