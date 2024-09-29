@@ -1,10 +1,11 @@
-@using RazorViews.Interfaces
+@* @using RazorViews.Interfaces *@
 
+@* Injecting a service directly in view
 @inject IArticlesService articlesServiceInView;
 
 @{
     var articles = articlesServiceInView.GetTopArticles(2);
-}
+} *@
 
 <h2>Articles View</h2>
 
@@ -15,6 +16,23 @@
 <button id="load-articles" type="button" class="button button-blue-back">Load Articles</button>
 
 <div id="articles-list" class="box"></div>
+
+@* Show content based on the environment
+<environment include="Development">
+    <div> Show only for Development</div>
+</environment>
+
+<environment exclude="Production">
+    <div> Show everywhere except in Production</div>
+</environment> *@
+
+<environment include="Production">
+    <div>Show only for production</div>
+</environment>
+
+<environment include="Staging">
+    <div>Show only for staging environment </div>
+</environment>
 
 <script>
     document.querySelector("#load-articles").addEventListener("click", async function(){
