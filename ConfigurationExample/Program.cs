@@ -1,5 +1,9 @@
+using ConfigurationExample.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<WeatherApiOptions>
+    (builder.Configuration.GetSection("WeatherApi"));
 
 var app = builder.Build();
 

@@ -1,3 +1,4 @@
+using ConfigurationExample.Options;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConfigurationExample.Controllers
@@ -21,10 +22,19 @@ namespace ConfigurationExample.Controllers
             // ViewBag.ClientId = _configuration["WeatherApi:ClientId"]!;
             // ViewBag.ClientSecret = _configuration.GetValue<string>("WeatherApi:ClientSecret", "Default Client Secret")!;
             
-            var section = _configuration.GetSection("WeatherApi");
-            ViewBag.ClientId = section["ClientId"]!;
-            ViewBag.ClientSecret = section.GetValue<string>("ClientSecret", "Default Client Secret")!;
-            
+            // var section = _configuration.GetSection("WeatherApi");
+            // ViewBag.ClientId = section["ClientId"]!;
+            // ViewBag.ClientSecret = section.GetValue<string>("ClientSecret", "Default Client Secret")!;
+
+            // var options = _configuration.GetSection("WeatherApi").Get<WeatherApiOptions>();
+            // ViewBag.ClientId = options!.ClientId;
+            // ViewBag.ClientSecret = options.ClientSecret;
+
+            WeatherApiOptions options = new();
+            _configuration.GetSection("WeatherApi").Bind(options);
+            ViewBag.ClientId = options.ClientId;
+            ViewBag.ClientSecret = options.ClientSecret;
+
             return View();
         }
 
