@@ -1,0 +1,11 @@
+@model ConfigurationExample.Models.SocialMediaLinkOptions;
+
+<h1>Social Media Links</h1>
+
+<a href="@Model.Facebook">Facebook</a>
+<a href="@Model.Twitter">Twitter</a>
+<a href="@Model.Youtube">YouTube</a>
+
+<environment exclude="Development">
+    <a href="@Model.Instagram">Instagram</a>
+</environment>
