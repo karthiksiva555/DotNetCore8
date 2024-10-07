@@ -5,6 +5,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.Configure<WeatherApiOptions>
     (builder.Configuration.GetSection("WeatherApi"));
 
+builder.Configuration.AddJsonFile("WeatherApiConfig.json");
+
 var app = builder.Build();
 
 app.UseStaticFiles();
