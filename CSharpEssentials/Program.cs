@@ -40,5 +40,34 @@ channel2.NewVideoPublishedEvent += (videoName, videoUrl) =>
 {
     Console.WriteLine($"NewVideoPublishedEvent called for {videoName} at {videoUrl}");
 };
+channel2.NewVideoPublishedEvent += (videoName, videoUrl) => Console.WriteLine($"{videoName} has been published at {videoUrl}");
+
 channel2.PublishVideo("Friendly Dogs","https://youtube.com/id/1");
+
+Func<int, int, int> add = (a, b) => a + b;
+Console.WriteLine(add(5,6));
+
 // -------------------------------------------------------------
+
+// -------------------------------------------------------------
+// Top Level Statements
+// -------------------------------------------------------------
+
+// All the statements in this file are top-level because they are not written within main() method
+// Only one file in the project can contain top-level statements; in this case Program.cs
+const int a = 5;
+var b = a + 10;
+Console.WriteLine(a);
+
+// args are available to the top-level statements by default
+if (args.Length > 0)
+{
+    Console.WriteLine($"Arguments: {args[0]}");
+}
+// -------------------------------------------------------------
+
+// Not allowed, because Program class is reserved for auto-generated main method
+// class Program
+// {
+//     
+// }
